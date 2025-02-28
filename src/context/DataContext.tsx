@@ -28,6 +28,22 @@ export interface Bloc2 {
     cases: Case[];
 }
 
+interface Address {
+    name: string;
+    phone: string;
+    location: string;
+}
+
+interface Link {
+    name: string;
+    url: string;
+}
+
+interface Footer {
+    address: Address;
+    links: Link[];
+}
+
 interface Data {
     bloc_1: Bloc;
     bloc_2: Bloc;
@@ -36,6 +52,7 @@ interface Data {
     carte_point: any;
     banner_menu: any;
     head_menu: any;
+    footer: Footer;
 }
 
 interface DataContextType {
