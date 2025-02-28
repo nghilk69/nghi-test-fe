@@ -6,6 +6,7 @@ import {DataProvider, useData} from "./context/DataContext.tsx";
 import {useEffect} from "react";
 import MapSection from "./components/MapSection.tsx";
 import CalendarComponent from "./components/Calender.tsx";
+import CardSlider from "./components/CardSection.tsx";
 
 const AppContent = () => {
     const { data , error, fetching, fetchData } = useData();
@@ -23,6 +24,7 @@ const AppContent = () => {
                     <FeatureSection data={ data?.bloc_1 }/>
                     <MapSection data={ data?.carte_point } bloc2={ data?.bloc_2 }/>
                     <CalendarComponent data={ data?.bloc_2_2 }/>
+                    <CardSlider data={ data?.bloc_3 }/>
                 </main>
             </>}
 

@@ -265,32 +265,52 @@ header {
     text-align: center;
 }
 
-.calendar-wrapper {
-    width: 100%;
-    margin-bottom: 20px;
-}
-
-.react-calendar {
-    border: none;
-    width: 100% !important;
-}
-
-.react-calendar__tile {
+.card-description {
+    padding-left: 12px; /* Dành chỗ cho gạch dọc */
+    color: #562C2CCC;
+    font-size: 18px;
+    min-height: 60px;
     position: relative;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    transition: 0.3s;
+    font-weight: 400;
+    margin-left: 0.5rem;
 }
 
-.react-calendar__tile:disabled {
-    background: #f2f2f2;
-    color: gray;
+.card-description::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 0.5px;
+    background-color: #BBBBBB;
 }
 
-.react-calendar__tile--active {
-    background: #e74c3c;
-    color: white;
+.btn-see {
+    font-weight: 500;
+    font-size: 20px;
+    color: #666666;
+    border-bottom: 1px solid #666666;
+}
+
+.card-tagline {
+    font-weight: 500;
+    font-size: 28px;
+    color: #222222;
+}
+
+.card-title {
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    color: #F2542D;
+}
+
+.calender {
+    border: 1px solid #562C2C4D;
+    border-radius: 24px;
+    box-shadow: 0 4px 30px #F2542D1A;
+    padding: 24px 32px;
+
 }
 
 .available {
@@ -390,12 +410,31 @@ textarea {
     margin-top: 15px;
 }
 form {
-    input, .toolbar {
+    input {
         font-size: 18px;
         color: #562C2C;
         font-weight: 400;
         border: 1px solid #562C2C4D;
         border-radius: 123px;
+        box-shadow: 0 4px 30px #F2542D1A;
+    }
+
+    .toolbar {
+        font-size: 18px;
+        color: #562C2C;
+        border-radius: 16px;
+        font-weight: 400;
+        border: 1px solid #562C2C4D;
+        box-shadow: 0 4px 30px #F2542D1A;
+    }
+
+    .ql-container {
+        border: none !important;
+    }
+
+    .ql-toolbar {
+        border: none !important;
+        border-bottom: 1px solid #E2E8F0 !important;
     }
 }
 

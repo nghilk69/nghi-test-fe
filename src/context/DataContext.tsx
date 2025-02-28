@@ -12,6 +12,7 @@ export interface Bloc {
     title: string;
     description: string;
     subtitle: string;
+    more_info: string;
     cases: Case[];
 }
 
@@ -31,6 +32,7 @@ interface Data {
     bloc_1: Bloc;
     bloc_2: Bloc;
     bloc_2_2: Bloc2;
+    bloc_3: Bloc;
     carte_point: any;
     banner_menu: any;
     head_menu: any;

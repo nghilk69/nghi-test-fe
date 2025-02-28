@@ -45,9 +45,10 @@ const CalendarComponent = ({data}) => {
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg border border-gray-200">
+        <div className="max-w-3xl mx-auto p-6 bg-white">
             <h2 className="text-center text-2xl font-bold text-red-500">{ data.title }</h2>
 
+            <div className="calender">
             <div className="flex justify-center items-center my-4">
                 <button onClick={() => changeMonth("prev")} className="text-red-500 text-3xl px-3">&lt;</button>
                 <span className="text-xl font-bold text-gray-800">{months[currentMonth]} {currentYear}</span>
@@ -86,23 +87,25 @@ const CalendarComponent = ({data}) => {
                         </button>
                     );
                 })}
+
+            </div>
             </div>
             <form className="mt-4">
                 <div className="flex items-center">
-                    <label className="block mb-2 w-1/6">{ data.btn_1[0] }:</label>
+                    <label className="block mb-2 w-1/6 text-left">{ data.btn_1[0] }:</label>
                     <input type="text" className="p-2 mb-2 ml-6" placeholder={ data.btn_1[1] }/>
                 </div>
                 <div className="flex items-center">
-                    <label className="block mb-2 w-1/6">{ data.btn_2[0] }:</label>
+                    <label className="block mb-2 w-1/6 text-left">{ data.btn_2[0] }:</label>
                     <input type="email" className="p-2 mb-2 ml-6"
                            placeholder={ data.btn_2[1] }/>
                 </div>
                 <div className="flex items-center">
-                    <label className="block mb-2 w-1/6">{ data.btn_3 }:</label>
-                    <ReactQuill theme="snow" value={message} onChange={setMessage} className="w-full bg-white border rounded-md mb-2 ml-4" />
+                    <label className="block mb-2 w-1/6 text-left">{ data.btn_3 }:</label>
+                    <ReactQuill theme="snow" value={message} onChange={setMessage} className="toolbar w-full bg-white mb-2 ml-4 min-h-[120px]" />
                 </div>
                 <div className="flex items-center gap-2 mb-4">
-                    <label className="block mb-2 w-1/6">{data.btn_4[0]}:</label>
+                    <label className="block mb-2 w-1/6 text-left">{data.btn_4[0]}:</label>
                     <span className="text-blue-500 cursor-pointer">📎 { data.btn_4[1] }</span>
                     <span className="text-gray-400">(*{data.btn_4[2]})</span>
                 </div>
