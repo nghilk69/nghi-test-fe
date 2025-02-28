@@ -244,6 +244,207 @@ header {
     color: #562C2C
 }
 
+.activity-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 700px;
+    margin: auto;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #e74c3c;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.calendar-wrapper {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.react-calendar {
+    border: none;
+    width: 100% !important;
+}
+
+.react-calendar__tile {
+    position: relative;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.react-calendar__tile:disabled {
+    background: #f2f2f2;
+    color: gray;
+}
+
+.react-calendar__tile--active {
+    background: #e74c3c;
+    color: white;
+}
+
+.available {
+    color: #F2542D;
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.occupied {
+    color: #AAAAAA;
+    font-size: 18px;
+    font-weight: 400;
+    span {
+        color: #999999 !important;
+    }
+}
+
+.occupied-day {
+    color: #999999 !important;
+}
+
+.btn-day {
+    width: auto;
+    gap: 4px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: 1px solid #D7D7D7;
+    background-color: #FFFFFF;
+    height: 4.5rem;
+}
+
+.btn-available {
+    width: auto;
+    gap: 8px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #FFF4F1;
+    border: 1px solid #F2542D;
+    height: 4.5rem;
+
+}
+
+.btn-cal {
+    height: 4.5rem;
+}
+
+.day {
+    font-size: 20px;
+    font-weight: 600;
+    color: #562C2C;
+}
+
+/* Form Styling */
+.form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    font-size: 24px;
+    font-weight: 400;
+    color: #562C2C;
+}
+
+input, textarea {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+textarea {
+    height: 80px;
+}
+
+.file-upload {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 14px;
+    color: #3498db;
+    cursor: pointer;
+}
+
+.icon {
+    font-size: 18px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+form {
+    input, .toolbar {
+        font-size: 18px;
+        color: #562C2C;
+        font-weight: 400;
+        border: 1px solid #562C2C4D;
+        border-radius: 123px;
+    }
+}
+
+.btn-submit {
+    width: 200px;
+    height: 48px;
+    padding: 12px 16px;
+    border-radius: 33px;
+    color: white;
+    background-color: #F2542D;
+    justify-content: center;
+    margin-left: 1rem;
+}
+
+.btn-cancel {
+    width: 200px;
+    height: 48px;
+    padding: 12px 16px;
+    border-radius: 33px;
+    border: 1px solid #562C2C4D;
+    color: #562C2C;
+    justify-content: center;
+
+
+}
+
+button {
+    padding: 10px 15px;
+    font-size: 14px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.clear {
+    background: #f2f2f2;
+    color: #333;
+}
+
+.submit {
+    background: #e74c3c;
+    color: white;
+}
+
+
+
 
 @media screen and (min-width: 1024px) {
     .nav-item h4 {

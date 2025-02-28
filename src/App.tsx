@@ -5,6 +5,7 @@ import HeroSection from './components/HeroSection'
 import {DataProvider, useData} from "./context/DataContext.tsx";
 import {useEffect} from "react";
 import MapSection from "./components/MapSection.tsx";
+import CalendarComponent from "./components/Calender.tsx";
 
 const AppContent = () => {
     const { data , error, fetching, fetchData } = useData();
@@ -21,6 +22,7 @@ const AppContent = () => {
                     <HeroSection data={ data?.banner_menu }/>
                     <FeatureSection data={ data?.bloc_1 }/>
                     <MapSection data={ data?.carte_point } bloc2={ data?.bloc_2 }/>
+                    <CalendarComponent data={ data?.bloc_2_2 }/>
                 </main>
             </>}
 

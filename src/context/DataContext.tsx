@@ -15,9 +15,22 @@ export interface Bloc {
     cases: Case[];
 }
 
+export interface Bloc2 {
+    title: string;
+    btn_1: string[];
+    btn_2: string[];
+    btn_3: string;
+    btn_4: string[];
+    btn_5: string;
+    btn_6: string;
+    subtitle: string;
+    cases: Case[];
+}
+
 interface Data {
     bloc_1: Bloc;
     bloc_2: Bloc;
+    bloc_2_2: Bloc2;
     carte_point: any;
     banner_menu: any;
     head_menu: any;
