@@ -1,9 +1,25 @@
-
+import React from "react";
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
+import L, {LatLngExpression} from "leaflet";
 
 const MapSection: React.FC<any> = ({ data, bloc2 }) => {
+    const customIcon = (iconUrl: string) =>
+        L.icon({
+            iconUrl,
+            iconSize: [40, 40],
+            iconAnchor: [20, 40],
+            popupAnchor: [0, -40],
+        });
+
+    const markers: { position: LatLngExpression; img: string; label: string }[] = [
+        { position: [48.8566, 2.3522], img: "/assets/MapPin1.png", label: "" },
+        { position: [45.764, 4.8357], img: "/assets/MapPin2.png", label: "" },
+        { position: [43.6047, 1.4442], img: "/assets/MapPin3.png", label: "" },
+    ];
     return (
         <section className="p-12 map-section">
-            <div className="container mx-auto text-center">
+            <div className="container mx-auto text-center flex-row justify-items-center">
                 <h2 className="text-3xl font-bold text-orange-500 mb-4">{bloc2.title}</h2>
                 <div className="flex gap-4 my-4 justify-center">
                     <button
@@ -20,16 +36,25 @@ const MapSection: React.FC<any> = ({ data, bloc2 }) => {
                     </button>
                 </div>
                 {/* Bản đồ */}
-                <div className=" mb-10 relative w-full h-[500px] overflow-hidden justify-center flex">
-                    <iframe
-                        width={'70%'}
-                        height={'100%'}
-                        style={{border: 0, borderRadius: 20}}
-                        loading="lazy"
-                        allowFullScreen
-                        // src={`https://www.google.com/maps/embed/v1/view?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&center=${47},${75}&zoom=5&maptype=satellite&&language=en-US`}
-                        src={`https://www.google.com/maps/embed/v1/search?key=AIzaSyAOVYRIgupAurZup5y1PRh8Ismb1A3lLao&q=${encodeURIComponent(data?.address)}&zoom=10&maptype=satellite&&language=en-US`}
-                    />
+                <div className=" mb-10 relative w-2/3 h-[698px] overflow-hidden justify-center flex">
+                    <MapContainer center={[47, 2]} zoom={6} className="w-full h-full rounded-lg absolute">
+                        <TileLayer
+                            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                        />
+                        {markers.map((marker, index) => (
+                            <Marker
+                                key={index}
+                                position={marker.position}
+                                icon={customIcon(marker.img)}
+                            >
+                                <Popup>{marker.label}</Popup>
+                            </Marker>
+                        ))}
+                    </MapContainer>
+                    <button className="sample-map">
+                        <img src="/assets/sample.png" alt={'sample'}/>
+                        Emplacement
+                    </button>
                 </div>
             </div>
         </section>
