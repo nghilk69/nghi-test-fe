@@ -13,7 +13,7 @@ import SocialMediaComponent from "./components/SocialMediaSection.tsx";
 import Lastection from "./components/LastSection.tsx";
 
 const AppContent = () => {
-    const { data , error, fetching, fetchData } = useData();
+    const { data , fetchData } = useData();
 
     useEffect(() => {
         fetchData('fr');

@@ -1,7 +1,9 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+// @ts-ignore
 import "swiper/css";
+import React from "react";
 
-const Card = ({ item }) => {
+const Card: React.FC<any> = ({item}) => {
     return (
         <div className="bg-white overflow-hidden h-full flex flex-col">
             <img
@@ -18,7 +20,7 @@ const Card = ({ item }) => {
     );
 };
 
-const CardComponent = ({data}) => {
+const CardComponent: React.FC<any> = ({data}) => {
     const cardData = [{
         title: data.cases[0]?.category,
         tagline: data.cases[0]?.tagline,

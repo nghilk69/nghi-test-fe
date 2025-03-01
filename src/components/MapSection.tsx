@@ -23,7 +23,7 @@ const MapSection: React.FC<any> = ({ data, bloc2 }) => {
         setActiveMarker(id);
     };
 
-    const handleMapClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    const handleMapClick = () => {
         setActiveMarker(null);
     };
 
