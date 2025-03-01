@@ -14,7 +14,7 @@ const FeatureSection: React.FC<any> = ({data}) => {
                 <p className="features-subtitle mb-10">{ data.subtitle }</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="rounded-lg card-item">
-                        <img src="/assets/card1.png" alt="Cours en Ligne" className="rounded-lg mb-4" />
+                        <img src="/assets/features1.svg" alt="Cours en Ligne" className="rounded-lg mb-4" />
                         <h3 className="title-bloc1">{ data.cases[0]?.category }</h3>
                         <h2 className="sub-bloc1">{ data.cases[0]?.tagline }</h2>
                         <p className="des-bloc1 mb-4">{ data.cases[0]?.description }</p>
@@ -22,7 +22,7 @@ const FeatureSection: React.FC<any> = ({data}) => {
                             src='/assets/ArrowUpRight.svg'/></span></button>
                     </div>
                     <div className="rounded-lg card-item-2 card-item">
-                        <img src="/assets/card2.png" alt="Ateliers Pratiques" className="rounded-lg mb-4"/>
+                        <img src="/assets/features2.svg" alt="Ateliers Pratiques" className="rounded-lg mb-4"/>
                         <h3 className="title-bloc1">{ data.cases[1]?.category }</h3>
                         <h2 className="sub-bloc1">{ data.cases[1]?.tagline }</h2>
                         <p className="des-bloc1 mb-4">{ data.cases[1]?.description }</p>
@@ -30,7 +30,7 @@ const FeatureSection: React.FC<any> = ({data}) => {
                             src='/assets/ArrowUpRight.svg'/></span></button>
                 </div>
                     <div className="rounded-lg card-item">
-                        <img src="/assets/card3.png" alt="Expériences Gastronomiques" className="rounded-lg mb-4"/>
+                        <img src="/assets/features3.svg" alt="Expériences Gastronomiques" className="rounded-lg mb-4"/>
                         <h3 className="title-bloc1">{data.cases[2]?.category}</h3>
                         <h2 className="sub-bloc1">{data.cases[2]?.tagline}</h2>
                         <p className="des-bloc1 mb-4">{data.cases[2]?.description}</p>
