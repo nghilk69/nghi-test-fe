@@ -41,6 +41,9 @@ const HeroSection: React.FC<any> = ({ data }) => {
                     </div>
                 </div>
             </div>
+            <div className="connect">
+            <img alt="connect" src="/assets/Connect.svg"/>
+            </div>
             {/*<div className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center">*/}
             {/*    <h1 className="text-white text-4xl sm:text-6xl font-bold drop-shadow-md">*/}
             {/*        Explorez avec CookMaster*/}

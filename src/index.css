@@ -111,6 +111,13 @@ header {
     justify-content: space-between;
 }
 
+.connect {
+    position: absolute;
+    bottom: 5rem;
+    right: 3.5rem;
+    cursor: pointer;
+}
+
 .nav-item {
     width: 22rem;
     color: #fff;
