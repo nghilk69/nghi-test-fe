@@ -139,7 +139,7 @@ header {
         margin-top: 0.5rem;
         position: absolute;
         font-weight: 600;
-        bottom: 0;
+        bottom: -2rem;
         transition: all .35s ease-in-out
     }
 }
