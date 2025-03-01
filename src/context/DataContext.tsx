@@ -7,12 +7,22 @@ interface Case {
     tagline: string;
     description: string;
     cta: string;
+    title: string;
+    author: string;
+    review: string;
+    date: string;
 }
 export interface Bloc {
     title: string;
     description: string;
     subtitle: string;
+    text_title: string;
     more_info: string;
+    text: string;
+    button: string;
+    footer: string;
+    reviews: Case[]
+    pictos: Case[];
     cases: Case[];
 }
 
@@ -49,6 +59,9 @@ interface Data {
     bloc_2: Bloc;
     bloc_2_2: Bloc2;
     bloc_3: Bloc;
+    bloc_4: Bloc;
+    bloc_5: Bloc;
+    bloc_6: Bloc;
     carte_point: any;
     banner_menu: any;
     head_menu: any;
@@ -74,7 +87,7 @@ export const DataProvider: React.FC<DataProviderProps> = ({ children }) => {
       setFetching(true);
       setError(null);
       try {
-          const response = await fetch('https://api.test.soa-dev.net/api/v1/pages?lang=en');
+          const response = await fetch(`https://api.test.soa-dev.net/api/v1/pages?lang=${value}`);
           console.log('response>>>', response);
           if (!response.ok) throw  new Error('Failed to fetch data');
           const result = await response.json();

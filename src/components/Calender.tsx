@@ -45,82 +45,88 @@ const CalendarComponent = ({data}) => {
     };
 
     return (
-        <div className="max-w-3xl mx-auto p-6 bg-white">
-            <h2 className="text-center text-2xl font-bold text-red-500">{ data.title }</h2>
-
+        <div className="container-cal mx-auto p-6 bg-white">
+            <div className="w-full">
+                <div className="flex items-center">
+                    <div className="line-title"></div>
+                    <h2 className="features-title mb-2">{data.title}</h2>
+                    <div className="line-title"></div>
+                </div>
+            </div>
             <div className="calender">
-            <div className="flex justify-center items-center my-4">
-                <button onClick={() => changeMonth("prev")} className="text-red-500 text-3xl px-3">&lt;</button>
-                <span className="text-xl font-bold text-gray-800">{months[currentMonth]} {currentYear}</span>
-                <button onClick={() => changeMonth("next")} className="text-red-500 text-3xl px-3">&gt;</button>
-            </div>
+                <div className="flex justify-center items-center my-4">
+                    <button onClick={() => changeMonth("prev")} className="text-red-500 text-3xl px-3">&lt;</button>
+                    <span className="text-xl font-bold text-gray-800">{months[currentMonth]} {currentYear}</span>
+                    <button onClick={() => changeMonth("next")} className="text-red-500 text-3xl px-3">&gt;</button>
+                </div>
 
-            <div className="grid grid-cols-7 gap-2 text-center font-bold text-gray-700">
-                {daysOfWeek.map((day) => (
-                    <div key={day} className="py-2">{day}</div>
-                ))}
-            </div>
+                <div className="grid grid-cols-7 gap-2 text-center font-bold text-gray-700">
+                    {daysOfWeek.map((day) => (
+                        <div key={day} className="py-2">{day}</div>
+                    ))}
+                </div>
 
-            {/* Hiển thị các ngày */}
-            <div className="grid grid-cols-7 gap-2 my-2">
-                {/* Thêm ô trống cho ngày đầu tiên của tháng */}
-                {Array.from({length: firstDayOfMonth}).map((_, i) => (
-                    <div key={`empty-${i}`} className="py-2"></div>
-                ))}
+                {/* Hiển thị các ngày */}
+                <div className="grid grid-cols-7 gap-2 my-2">
+                    {/* Thêm ô trống cho ngày đầu tiên của tháng */}
+                    {Array.from({length: firstDayOfMonth}).map((_, i) => (
+                        <div key={`empty-${i}`} className="py-2"></div>
+                    ))}
 
-                {days.map((day) => {
-                    const occupied = isOccupied(day);
-                    return (
-                        <button
-                            key={day}
-                            className={`btn-cal flex flex-col items-center ${
-                                occupied ? "btn-day cursor-not-allowed" :
-                                    selectedDate === `${currentYear}-${currentMonth + 1}-${day}` ? "bg-blue-200 text-white" : "btn-available"
-                            }`}
-                            disabled={occupied}
-                            onClick={() => setSelectedDate(`${currentYear}-${currentMonth + 1}-${day}`)}
-                        >
-                            <span className={`${occupied ? "occupied-day" : ""} day`}>{day}</span>
-                            <span className={`${occupied ? "occupied" : "available"}`}>
+                    {days.map((day) => {
+                        const occupied = isOccupied(day);
+                        return (
+                            <button
+                                key={day}
+                                className={`btn-cal flex flex-col items-center ${
+                                    occupied ? "btn-day cursor-not-allowed" :
+                                        selectedDate === `${currentYear}-${currentMonth + 1}-${day}` ? "bg-blue-200 text-white" : "btn-available"
+                                }`}
+                                disabled={occupied}
+                                onClick={() => setSelectedDate(`${currentYear}-${currentMonth + 1}-${day}`)}
+                            >
+                                <span className={`${occupied ? "occupied-day" : ""} day`}>{day}</span>
+                                <span className={`${occupied ? "occupied" : "available"}`}>
                 {occupied ? "Occupied" : "Libre"}
               </span>
-                        </button>
-                    );
-                })}
+                            </button>
+                        );
+                    })}
 
-            </div>
+                </div>
             </div>
             <form className="mt-4">
                 <div className="flex items-center">
-                    <label className="block mb-2 w-1/6 text-left">{ data.btn_1[0] }:</label>
-                    <input type="text" className="p-2 mb-2 ml-6" placeholder={ data.btn_1[1] }/>
+                    <label className="block mb-2 w-1/6 text-left">{data.btn_1[0]}:</label>
+                    <input type="text" className="p-2 mb-2 ml-6" placeholder={data.btn_1[1]}/>
                 </div>
                 <div className="flex items-center">
-                    <label className="block mb-2 w-1/6 text-left">{ data.btn_2[0] }:</label>
+                    <label className="block mb-2 w-1/6 text-left">{data.btn_2[0]}:</label>
                     <input type="email" className="p-2 mb-2 ml-6"
-                           placeholder={ data.btn_2[1] }/>
+                           placeholder={data.btn_2[1]}/>
                 </div>
                 <div className="flex items-center">
-                    <label className="block mb-2 w-1/6 text-left">{ data.btn_3 }:</label>
-                    <ReactQuill theme="snow" value={message} onChange={setMessage} className="toolbar w-full bg-white mb-2 ml-4 min-h-[120px]" />
+                    <label className="block mb-2 w-1/6 text-left">{data.btn_3}:</label>
+                    <ReactQuill theme="snow" value={message} onChange={setMessage}
+                                className="toolbar w-full bg-white mb-2 ml-4 min-h-[120px]"/>
                 </div>
                 <div className="flex items-center gap-2 mb-4">
                     <label className="block mb-2 w-1/6 text-left">{data.btn_4[0]}:</label>
-                    <span className="text-blue-500 cursor-pointer">📎 { data.btn_4[1] }</span>
+                    <span className="text-blue-500 cursor-pointer">📎 {data.btn_4[1]}</span>
                     <span className="text-gray-400">(*{data.btn_4[2]})</span>
                 </div>
 
                 <div className="flex justify-end">
-                        <button type="reset" className="btn-cancel">{ data.btn_5 }
-                        </button>
-                        <button
-                                className="btn-submit">{ data.btn_6 }
-                            <img src="/assets/send-2.svg" alt="send2"/>
-                        </button>
-                    </div>
+                    <button type="reset" className="btn-cancel">{data.btn_5}
+                    </button>
+                    <button
+                        className="btn-submit">{data.btn_6}
+                        <img src="/assets/send-2.svg" alt="send2"/>
+                    </button>
+                </div>
             </form>
         </div>
-);
+    );
 };
 
 export default CalendarComponent;

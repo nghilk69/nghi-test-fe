@@ -3,10 +3,15 @@ const FeatureSection: React.FC<any> = ({data}) => {
 
 
     return (
-        <section className="py-12 bg-white">
+        <section className="features py-12 bg-white">
             <div className="container mx-auto text-center">
-                <h2 className="text-3xl font-bold text-orange-500 mb-4">{ data.title }</h2>
-                <p className="text-gray-700 mb-10">{ data.subtitle }</p>
+                <div className="flex items-center">
+                    <div className="line-title"></div>
+                    <h2 className="features-title mb-2 px-2">{data.title}</h2>
+                    <div className="line-title"></div>
+                </div>
+
+                <p className="features-subtitle mb-10">{ data.subtitle }</p>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div className="rounded-lg card-item">
                         <img src="/assets/card1.png" alt="Cours en Ligne" className="rounded-lg mb-4" />
